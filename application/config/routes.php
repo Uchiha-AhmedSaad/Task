@@ -55,20 +55,24 @@ $route['translate_uri_dashes'] = FALSE;
 
 
 /*
-	* in url after index.php  $route['dashboard'];
+	*this url belongs to Users Controller.
 
 */
-$route['dashboard'] 				= 'Dashboard/DashboardController';
+$route['dashboard'] 						= 'Dashboard/DashboardController';
+$route['dashboard/users'] 					= 'Dashboard/Users/UsersController/Index';
+$route['dashboard/users/create'] 			= 'Dashboard/Users/UsersController/Create';
+$route['dashboard/users/store'] 			= 'Dashboard/Users/UsersController/Store';
+$route['dashboard/users/edit'] 				= 'Dashboard/Users/UsersController/Edit';
+$route['dashboard/users/update'] 			= 'Dashboard/Users/UsersController/Update';
+$route['dashboard/users/delete'] 			= 'Dashboard/Users/UsersController/Delete';
 
-$route['dashboard/users'] 			= 'Dashboard/Users/UsersController';
 
-
-$route['dashboard/users/edit'] 		= 'Dashboard/Users/UsersController/edit';
-
-$route['dashboard/users/create'] 	= 'Dashboard/Users/UsersController/Create';
-
-$route['dashboard/users/store'] 	= 'Dashboard/Users/UsersController/Store';
-
-$route['dashboard/users/update'] 	= 'Dashboard/Users/UsersController/Update';
-
-$route['dashboard/users/delete'] 	= 'Dashboard/Users/UsersController/Delete';
+/*
+	*this url belongs to Items Controller.
+*/
+$route['dashboard/items'] 					= 'Dashboard/Items/ItemsController/Index';
+$route['dashboard/items/create'] 			= 'Dashboard/Items/ItemsController/Create';
+$route['dashboard/items/store'] 			= 'Dashboard/Items/ItemsController/Store';
+$route['dashboard/items/edit'] 				= 'Dashboard/Items/ItemsController/Edit';
+$route['dashboard/items/update'] 			= 'Dashboard/Items/ItemsController/Update';
+$route['dashboard/items/delete'] 			= 'Dashboard/Items/ItemsController/Delete';

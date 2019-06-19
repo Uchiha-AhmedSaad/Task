@@ -8,7 +8,7 @@ class UsersController extends Admin_Controller {
 		parent::__construct();
 		$this->load->model('User_model');
 	}
-	public function index()
+	public function Index()
 	{
 		$title = "Users";
 		$users = $this->User_model->get();
@@ -36,7 +36,7 @@ class UsersController extends Admin_Controller {
 		return redirect('dashboard/users', 'refresh');
 
 	}
-	public function edit()
+	public function Edit()
 	{
 		$title = "Edit User";
 		if (isset($_GET['id'])) 

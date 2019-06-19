@@ -13,8 +13,6 @@ class MY_Controller extends CI_Controller
 	{
 		//this parent refer to CI_Controller.
 		parent::__construct();
-		 $this->load->helper('url');
-		 $this->load->library('form_validation');
 
 		$this->data['errors'] = array();
 
