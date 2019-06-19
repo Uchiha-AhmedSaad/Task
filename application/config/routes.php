@@ -58,6 +58,17 @@ $route['translate_uri_dashes'] = FALSE;
 	* in url after index.php  $route['dashboard'];
 
 */
-$route['dashboard'] = 'Dashboard/DashboardController';
+$route['dashboard'] 				= 'Dashboard/DashboardController';
 
-$route['dashboard/users/user_create'] = 'Dashboard/Users/Create';
+$route['dashboard/users'] 			= 'Dashboard/Users/UsersController';
+
+
+$route['dashboard/users/edit'] 		= 'Dashboard/Users/UsersController/edit';
+
+$route['dashboard/users/create'] 	= 'Dashboard/Users/UsersController/Create';
+
+$route['dashboard/users/store'] 	= 'Dashboard/Users/UsersController/Store';
+
+$route['dashboard/users/update'] 	= 'Dashboard/Users/UsersController/Update';
+
+$route['dashboard/users/delete'] 	= 'Dashboard/Users/UsersController/Delete';
