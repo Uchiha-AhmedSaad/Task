@@ -30,24 +30,27 @@ class UsersController extends Admin_Controller {
 			$data['last_name'] 		= $_POST['last_name'];
 			$data['email'] 			= $_POST['email'];
 			$data['password'] 		= $_POST['password'];
-			$data['create_date'] 	= date('Y-m-i');
+			$data['create_date'] 	= date('Y-m-d h-i-s');
 		}
 		$users = $this->User_model->save($data);
-
+		return redirect('dashboard/users', 'refresh');
 
 	}
 	public function edit()
 	{
+		$title = "Edit User";
 		if (isset($_GET['id'])) 
 		{
 			$user = $this->User_model->get($_GET['id']);
-			$this->load->view('Dashboard/Users/Create',get_defined_vars());
+			$this->load->view('Dashboard/Users/Edit',get_defined_vars());
 		}
 	}
 	public function Update()
 	{
 		$data = [];
 		if ($_GET['id'] != NULL) {
+			$user = $this->User_model->get($_GET['id']);
+			
 			if ($_SERVER['REQUEST_METHOD'] == 'POST') 
 			{
 				$data['username'] 		= $_POST['username'];
@@ -63,11 +66,7 @@ class UsersController extends Admin_Controller {
 	}
 	public function Delete()
 	{
-		if ($this->User_model->remove($_GET['id'])) {
-			echo "'Deleted";
-		}
-		else{
-			echo 'you cant delete this element';
-		}
+		$this->User_model->remove($_GET['id']);
+		return redirect('dashboard/users', 'refresh');
 	}
 }
