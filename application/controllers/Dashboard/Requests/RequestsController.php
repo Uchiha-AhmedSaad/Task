@@ -90,6 +90,6 @@ class RequestsController extends Admin_Controller
 			}
 		}
 		$this->Request_model->remove($_GET['id']);
-		return redirect('dashboard/users', 'refresh');
+		return redirect('dashboard/requests', 'refresh');
 	}
 }

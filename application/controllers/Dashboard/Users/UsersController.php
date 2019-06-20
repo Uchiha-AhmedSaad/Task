@@ -29,7 +29,7 @@ class UsersController extends Admin_Controller {
 			$data['first_name'] 	= $_POST['first_name'];
 			$data['last_name'] 		= $_POST['last_name'];
 			$data['email'] 			= $_POST['email'];
-			$data['password'] 		= $_POST['password'];
+			$data['password'] 		= md5($_POST['password']);
 			$data['create_date'] 	= date('Y-m-d h-i-s');
 		}
 		$users = $this->User_model->save($data);
@@ -57,12 +57,15 @@ class UsersController extends Admin_Controller {
 				$data['first_name'] 	= $_POST['first_name'];
 				$data['last_name'] 		= $_POST['last_name'];
 				$data['email'] 			= $_POST['email'];
-				$data['password'] 		= $_POST['password'];
 				$data['create_date'] 	= date('Y-m-i');
+			}
+			if (!empty($_REQUEST['password'])) 
+			{
+				$data['password'] 		= md5($_POST['password']);
 			}
 			$users = $this->User_model->save($data,$_GET['id']);
 		}
-
+		return redirect('dashboard/users', 'refresh');
 	}
 	public function Delete()
 	{

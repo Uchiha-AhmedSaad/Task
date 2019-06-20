@@ -1,5 +1,5 @@
 
-<?php include_once __DIR__ ."/../app.php"; ?>
+<?php $this->load->view('Dashboard/app'); ?>
 
 <?php echo form_open('dashboard/items/store'); ?>
 <div style="height: 500px; background-color: white; padding: 20px; border-radius: 20px;">
@@ -27,5 +27,5 @@
 	</div>	
 </div>
 <?php echo form_close(); ?>
-<?php include_once __DIR__ ."/../footer.php"; ?>
+<?php $this->load->view('Dashboard/footer'); ?>
 

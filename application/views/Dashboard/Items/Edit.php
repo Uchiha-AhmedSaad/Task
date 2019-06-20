@@ -1,31 +1,45 @@
-
-<?php include_once __DIR__ ."/../app.php"; ?>
-
-<?php echo form_open('dashboard/items/update?id='.$item->id); ?>
-<div style="height: 500px; background-color: white; padding: 20px; border-radius: 20px;">
-	<div class="row">
-		<div class="form-group col-sm-6">
-			<label class="form-check-label" >إسم العنصر</label>
-			<input type="text" class="form-control" name="item_name" value="<?php echo $item->item_name; ?>" >
+<?php $this->load->view('Dashboard/app'); ?>
+	<div class="content">
+		<!-- Form horizontal -->
+		<div class="panel panel-flat">
+			<div class="panel-heading">
+				<h5 class="panel-title"><?php echo $title; ?></h5>
+				<div class="heading-elements">
+					<ul class="icons-list">
+                		<li><a data-action="collapse"></a></li>
+                		<li><a data-action="reload"></a></li>
+                		<li><a data-action="close"></a></li>
+                	</ul>
+            	</div>
+			</div>
+			<div class="panel-body">
+				<?php echo form_open('dashboard/items/update?id='.$item->id); ?>
+					<div class="row">
+						<div class="form-group col-sm-6">
+							<label class="form-check-label" >إسم العنصر</label>
+							<input type="text" class="form-control" name="item_name" value="<?php echo $item->item_name; ?>" >
+						</div>
+						<div class="from-group col-sm-6">
+							<label class="form-check-label">الكميه</label>
+							<input type="number" class="form-control" name="quantity" value="<?php echo $item->quantity; ?>">
+						</div>
+					</div>
+					<div class="row">
+						<div class="from-group col-sm-12">
+							<label class="form-check-label">السعر</label>
+							<input type="number" step="0.5" class="form-control" name="price" value="<?php echo $item->price; ?>">
+						</div>
+					</div>
+					<div class="row">
+						<div class="from-group col-sm-12">
+							<br>
+							<button type="submit" class="btn btn-primary">إنشاء</button>
+						</div>
+					</div>	
+				<?php echo form_close(); ?>
+			</div>
 		</div>
-		<div class="from-group col-sm-6">
-			<label class="form-check-label">الكميه</label>
-			<input type="number" class="form-control" name="quantity" value="<?php echo $item->quantity; ?>">
-		</div>
+		<!-- /form horizontal -->
 	</div>
-	<div class="row">
-		<div class="from-group col-sm-12">
-			<label class="form-check-label">السعر</label>
-			<input type="number" step="0.5" class="form-control" name="price" value="<?php echo $item->price; ?>">
-		</div>
-	</div>
-	<div class="row">
-		<div class="from-group col-sm-12">
-			<br>
-			<button type="submit" class="btn btn-primary">إنشاء</button>
-		</div>
-	</div>	
-</div>
-<?php echo form_close(); ?>
-<?php include_once __DIR__ ."/../footer.php"; ?>
+<?php $this->load->view('Dashboard/footer'); ?>
 
