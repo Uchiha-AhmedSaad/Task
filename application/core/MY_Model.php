@@ -13,6 +13,7 @@ class MY_Model extends CI_Model
 	{
 		parent::__construct();
 	}
+
 	public function get($id = NULL, $singel = FALSE)
 	{
 		if ($id != Null) {
@@ -31,7 +32,7 @@ class MY_Model extends CI_Model
 	}
 	public function get_by($where,$singel = FALSE)
 	{
-		$this->db->where($where);
+		$this->db->where($where[0],$where[1]);
 		return $this->get(NULL,$singel);
 	}
 	public function save($data,$id = NULL)
@@ -56,7 +57,6 @@ class MY_Model extends CI_Model
 		else{
 			$filter  = $this->_primary_filter;
 			$id_user = $filter($id);
-			var_dump($data);
 			$this->db->set($data);
 			$this->db->where($this->_primary_key,$id);
 			$this->db->update($this->_table_name);

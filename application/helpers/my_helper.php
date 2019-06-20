@@ -2,8 +2,8 @@
 
 if ( ! function_exists('test_method'))
 {
-    function test_method($var = '')
+    function test_method($ss)
     {
-        return $var;
+        return 'ssssssss';
     }   
 }

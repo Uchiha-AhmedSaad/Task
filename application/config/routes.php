@@ -76,3 +76,16 @@ $route['dashboard/items/store'] 			= 'Dashboard/Items/ItemsController/Store';
 $route['dashboard/items/edit'] 				= 'Dashboard/Items/ItemsController/Edit';
 $route['dashboard/items/update'] 			= 'Dashboard/Items/ItemsController/Update';
 $route['dashboard/items/delete'] 			= 'Dashboard/Items/ItemsController/Delete';
+
+/*
+	*this url belongs to Reuests Controller.
+*/
+
+$route['dashboard/requests'] 					= 'Dashboard/Requests/RequestsController/Index';
+$route['dashboard/requests/create'] 			= 'Dashboard/Requests/RequestsController/Create';
+$route['dashboard/requests/store'] 				= 'Dashboard/Requests/RequestsController/Store';
+$route['dashboard/requests/edit'] 				= 'Dashboard/Requests/RequestsController/Edit';
+$route['dashboard/requests/update'] 			= 'Dashboard/Requests/RequestsController/Update';
+$route['dashboard/requests/delete'] 			= 'Dashboard/Requests/RequestsController/Delete';
+
+

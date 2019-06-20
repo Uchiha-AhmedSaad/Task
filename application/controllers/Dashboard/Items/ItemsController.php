@@ -54,7 +54,7 @@ class ItemsController extends Admin_Controller
 	{
 		$data = [];
 		if ($_GET['id'] != NULL) {
-			$user = $this->Item_model->get($_GET['id']);
+			$item = $this->Item_model->get($_GET['id']);
 			
 			if ($_SERVER['REQUEST_METHOD'] == 'POST') 
 			{
@@ -64,7 +64,8 @@ class ItemsController extends Admin_Controller
 				$data['created_at'] 		= date('Y-m-d h-i-s');
 				$data['updated_at'] 		= date('Y-m-d h-i-s');
 			}
-			$users = $this->Item_model->save($data,$_GET['id']);
+			$item = $this->Item_model->save($data,$_GET['id']);
+			return redirect('dashboard/items', 'refresh');
 		}
 	}
 	public function Delete()
