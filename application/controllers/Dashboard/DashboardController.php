@@ -1,10 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class DashboardController extends CI_Controller {
+class DashboardController extends Admin_Controller {
 
-	public function index()
-	{
-		$this->load->view('Dashboard/app',get_defined_vars());
+
+	public function __construct(){
+		parent::__construct();
 	}
+	public function Index()
+	{
+		$this->load->view('Dashboard/app');
+	}
+
 }

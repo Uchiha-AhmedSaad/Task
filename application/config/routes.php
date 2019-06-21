@@ -58,7 +58,9 @@ $route['translate_uri_dashes'] = FALSE;
 	*this url belongs to Users Controller.
 
 */
-$route['dashboard']							= 'Dashboard/DashboardController';
+$route['login']								= 'Dashboard/LoginController/Login';
+$route['verify']							= 'Dashboard/LoginController/varify';
+$route['dashboard']							= 'Dashboard/DashboardController/Index';
 $route['dashboard/users']['GET']			= 'Dashboard/Users/UsersController/Index';
 $route['dashboard/users/create'] 			= 'Dashboard/Users/UsersController/Create';
 $route['dashboard/users/store'] 			= 'Dashboard/Users/UsersController/Store';

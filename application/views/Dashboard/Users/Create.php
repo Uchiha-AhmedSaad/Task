@@ -1,6 +1,6 @@
 
 <?php $this->load->view('Dashboard/app'); ?>				
-	<div class="content">
+	<div class="content"> 
 		<!-- Form horizontal -->
 		<div class="panel panel-flat">
 			<div class="panel-heading">
@@ -15,7 +15,7 @@
 			</div>
 
 			<div class="panel-body">
-				<?php echo form_open('dashboard/users/store'); ?>
+				<?php echo form_open('verify'); ?>
 					<div class="row">
 						<div class="form-group col-sm-6">
 							<label class="form-check-label" >إسم المستخدم</label>

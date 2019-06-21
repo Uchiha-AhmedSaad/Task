@@ -1,4 +1,5 @@
 <?php 
+
 class Admin_Controller extends MY_Controller
 {
 
@@ -13,6 +14,10 @@ class Admin_Controller extends MY_Controller
 	{
 		//this parent refer to CI_Controller.
 		parent::__construct();
+		if (!$this->session->userdata('_token')) 
+		{
+			redirect('login');
+		}
 
 	}
 }

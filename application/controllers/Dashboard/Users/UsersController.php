@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
 class UsersController extends Admin_Controller {
+
 
 	function __construct()
 	{
@@ -23,14 +25,14 @@ class UsersController extends Admin_Controller {
 	public function Store()
 	{
 		$data = [];
-		if ($_SERVER['REQUEST_METHOD'] == 'POST') 
-		{
-			$data['username'] 		= $_POST['username'];
-			$data['first_name'] 	= $_POST['first_name'];
-			$data['last_name'] 		= $_POST['last_name'];
-			$data['email'] 			= $_POST['email'];
-			$data['password'] 		= md5($_POST['password']);
-			$data['create_date'] 	= date('Y-m-d h-i-s');
+		if ($this->input->method() == 'POST') 
+		{								
+			$data['username'] 		= 	$this->input->post('username');
+			$data['first_name'] 	=  	$this->input->post('first_name');
+			$data['last_name'] 		=  	$this->input->post('last_name');
+			$data['email'] 			=  	$this->input->post('email');
+			$data['password'] 		= 	md5( $this->input->post('password'));
+			$data['create_date'] 	= 	date('Y-m-d h-i-s');
 		}
 		$users = $this->User_model->save($data);
 		return redirect('dashboard/users', 'refresh');
@@ -52,11 +54,11 @@ class UsersController extends Admin_Controller {
 			$user = $this->User_model->get($_GET['id']);
 			
 			if ($_SERVER['REQUEST_METHOD'] == 'POST') 
-			{
-				$data['username'] 		= $_POST['username'];
-				$data['first_name'] 	= $_POST['first_name'];
-				$data['last_name'] 		= $_POST['last_name'];
-				$data['email'] 			= $_POST['email'];
+			{								
+				$data['username'] 		= $this->input->post('username');
+				$data['first_name'] 	= $this->input->post('first_name');
+				$data['last_name'] 		= $this->input->post('last_name');
+				$data['email'] 			= $this->input->post('email');
 				$data['create_date'] 	= date('Y-m-i');
 			}
 			if (!empty($_REQUEST['password'])) 
