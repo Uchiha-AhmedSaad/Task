@@ -37,16 +37,6 @@ class MY_Model extends CI_Model
 	}
 	public function save($data,$id = NULL)
 	{
-	    
-
-/*	    if ($this->form_validation->run() == FALSE)
-	    {
-	            $this->load->view('myform');
-	    }
-	    else
-	    {
-	            $this->load->view('formsuccess');
-	    }*/
 		if (is_null($id)) {
 			//create
 			!isset($data[$this->_primary_key]) || $data[$this->_primary_key] = NULL;
@@ -55,6 +45,7 @@ class MY_Model extends CI_Model
 			$id_user = $this->db->insert_id();
 		} 
 		else{
+
 			$filter  = $this->_primary_filter;
 			$id_user = $filter($id);
 			$this->db->set($data);

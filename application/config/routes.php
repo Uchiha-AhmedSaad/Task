@@ -64,9 +64,9 @@ $route['dashboard']							= 'Dashboard/DashboardController/Index';
 $route['dashboard/users']['GET']			= 'Dashboard/Users/UsersController/Index';
 $route['dashboard/users/create'] 			= 'Dashboard/Users/UsersController/Create';
 $route['dashboard/users/store'] 			= 'Dashboard/Users/UsersController/Store';
-$route['dashboard/users/edit'] 				= 'Dashboard/Users/UsersController/Edit';
-$route['dashboard/users/update'] 			= 'Dashboard/Users/UsersController/Update';
-$route['dashboard/users/delete'] 			= 'Dashboard/Users/UsersController/Delete';
+$route['dashboard/users/edit/(:num)'] 		= 'Dashboard/Users/UsersController/Edit/$1';
+$route['dashboard/users/update/(:num)'] 			= 'Dashboard/Users/UsersController/Update/$1';
+$route['dashboard/users/delete/(:num)'] 			= 'Dashboard/Users/UsersController/Delete/$1';
 
 
 /*
@@ -74,10 +74,10 @@ $route['dashboard/users/delete'] 			= 'Dashboard/Users/UsersController/Delete';
 */
 $route['dashboard/items'] 					= 'Dashboard/Items/ItemsController/Index';
 $route['dashboard/items/create'] 			= 'Dashboard/Items/ItemsController/Create';
-$route['dashboard/items/store'] 			= 'Dashboard/Items/ItemsController/Store';
-$route['dashboard/items/edit'] 				= 'Dashboard/Items/ItemsController/Edit';
-$route['dashboard/items/update'] 			= 'Dashboard/Items/ItemsController/Update';
-$route['dashboard/items/delete'] 			= 'Dashboard/Items/ItemsController/Delete';
+$route['dashboard/items/store']['POST'] 			= 'Dashboard/Items/ItemsController/Store';
+$route['dashboard/items/edit/(:num)'] 		= 'Dashboard/Items/ItemsController/Edit/$1';
+$route['dashboard/items/update/(:num)'] 	= 'Dashboard/Items/ItemsController/Update/$1';
+$route['dashboard/items/delete/(:num)'] 	= 'Dashboard/Items/ItemsController/Delete/$1';
 
 /*
 	*this url belongs to Reuests Controller.
@@ -86,8 +86,8 @@ $route['dashboard/items/delete'] 			= 'Dashboard/Items/ItemsController/Delete';
 $route['dashboard/requests'] 					= 'Dashboard/Requests/RequestsController/Index';
 $route['dashboard/requests/create'] 			= 'Dashboard/Requests/RequestsController/Create';
 $route['dashboard/requests/store'] 				= 'Dashboard/Requests/RequestsController/Store';
-$route['dashboard/requests/edit'] 				= 'Dashboard/Requests/RequestsController/Edit';
-$route['dashboard/requests/update'] 			= 'Dashboard/Requests/RequestsController/Update';
-$route['dashboard/requests/delete'] 			= 'Dashboard/Requests/RequestsController/Delete';
+$route['dashboard/requests/edit/(:num)'] 		= 'Dashboard/Requests/RequestsController/Edit/$1';
+$route['dashboard/requests/update/(:num)'] 		= 'Dashboard/Requests/RequestsController/Update/$1';
+$route['dashboard/requests/delete/(:num)'] 		= 'Dashboard/Requests/RequestsController/Delete/$1';
 
 

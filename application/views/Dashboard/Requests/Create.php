@@ -3,7 +3,7 @@
 		<!-- Form horizontal -->
 		<div class="panel panel-flat">
 			<div class="panel-heading">
-				<h5 class="panel-title"><?php echo $title; ?></h5>
+				<h5 class="panel-title"><?php if (isset($title)) {echo $title;} ?></h5>
 				<div class="heading-elements">
 					<ul class="icons-list">
                 		<li><a data-action="collapse"></a></li>
@@ -18,6 +18,7 @@
 						<div class="form-group col-sm-6">
 							<label class="form-check-label" >إسم العميل</label>
 							<input type="text" class="form-control" name="customer_name" >
+							<?php 	echo form_error('customer_name', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
 					</div>
 					<div class="row counter">
@@ -31,10 +32,12 @@
 									  	}
 							  	 ?>
 							  </select>
+							<?php 	echo form_error('items[]', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
 						<div class="form-group col-sm-6">
 							<label class="form-check-label" >الكميه</label>
 							<input type="number" class="form-control" name="items[0][quantities]" >
+							<?php 	echo form_error('items[]', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
 					</div>
 					<div class="form-group col-sm-12">

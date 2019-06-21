@@ -3,7 +3,7 @@
 		<!-- Form horizontal -->
 		<div class="panel panel-flat">
 			<div class="panel-heading">
-				<h5 class="panel-title"><?php echo $title; ?></h5>
+				<h5 class="panel-title"><?php if (isset($title)) {echo $title;} ?></h5>
 				<div class="heading-elements">
 					<ul class="icons-list">
                 		<li><a data-action="collapse"></a></li>
@@ -38,8 +38,8 @@
 										<td><?php echo $value->price; ?></td>
 										<td><?php echo $value->created_at; ?></td>
 										<td><?php echo $value->updated_at; ?></td>
-										<td><a href="<?php echo base_url('dashboard/items/delete?id='.$value->id); ?>" class="btn btn-danger" type="button">Delete</a></td>
-										<td><a href="<?php echo base_url('dashboard/items/edit?id='.$value->id); ?>" class="btn btn-primary" type="button">Edit</a></td>
+										<td><a href="<?php echo base_url('dashboard/items/delete/'.$value->id); ?>" class="btn btn-danger" type="button">Delete</a></td>
+										<td><a href="<?php echo base_url('dashboard/items/edit/'.$value->id); ?>" class="btn btn-primary" type="button">Edit</a></td>
 									</tr>
 				      			<?php
 				      		}

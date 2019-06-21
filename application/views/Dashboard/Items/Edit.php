@@ -3,7 +3,9 @@
 		<!-- Form horizontal -->
 		<div class="panel panel-flat">
 			<div class="panel-heading">
-				<h5 class="panel-title"><?php echo $title; ?></h5>
+				<h5 class="panel-title"><?php if (isset($title)) {
+					echo $title;
+				} ?></h5>
 				<div class="heading-elements">
 					<ul class="icons-list">
                 		<li><a data-action="collapse"></a></li>
@@ -13,21 +15,24 @@
             	</div>
 			</div>
 			<div class="panel-body">
-				<?php echo form_open('dashboard/items/update?id='.$item->id); ?>
+				<?php echo form_open('dashboard/items/update/'.$item->id); ?>
 					<div class="row">
 						<div class="form-group col-sm-6">
 							<label class="form-check-label" >إسم العنصر</label>
 							<input type="text" class="form-control" name="item_name" value="<?php echo $item->item_name; ?>" >
+							<?php 	echo form_error('item_name', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
 						<div class="from-group col-sm-6">
 							<label class="form-check-label">الكميه</label>
 							<input type="number" class="form-control" name="quantity" value="<?php echo $item->quantity; ?>">
+							<?php 	echo form_error('quantity', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
 					</div>
 					<div class="row">
 						<div class="from-group col-sm-12">
 							<label class="form-check-label">السعر</label>
 							<input type="number" step="0.5" class="form-control" name="price" value="<?php echo $item->price; ?>">
+							<?php 	echo form_error('price', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
 					</div>
 					<div class="row">

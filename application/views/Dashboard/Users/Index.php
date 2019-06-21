@@ -40,8 +40,8 @@
 													<td><?php echo $value->last_name; ?></td>
 													<td><?php echo $value->username; ?></td>
 													<td><?php echo $value->email; ?></td>
-													<td><a href="<?php echo base_url('dashboard/users/delete?id='.$value->id); ?>" class="btn btn-danger" type="button">Delete</a></td>
-													<td><a href="<?php echo base_url('dashboard/users/edit?id='.$value->id); ?>" class="btn btn-primary" type="button">Edit</a></td>
+													<td><a href="<?php echo site_url('dashboard/users/delete?id='.$value->id); ?>" class="btn btn-danger" type="button">Delete</a></td>
+													<td><a href="<?php echo site_url('dashboard/users/edit/'.$value->id); ?>" class="btn btn-primary" type="button">Edit</a></td>
 												</tr>
 							      			<?php
 							      		}

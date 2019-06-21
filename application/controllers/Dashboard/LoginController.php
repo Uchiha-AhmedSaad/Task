@@ -30,4 +30,8 @@ class LoginController extends CI_Controller
 			redirect('login');
 		}
 	}
+	public function Logout()
+	{
+		$this->session->sess_destory();
+	}
 }

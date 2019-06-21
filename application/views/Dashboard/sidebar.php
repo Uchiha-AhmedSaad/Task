@@ -22,6 +22,14 @@
 							<li><a href="<?php echo base_url('dashboard/items'); ?>">العناصر</a></li>
 						</ul>
 					</li>
+					<li>
+						<a href="#"><i class="icon-grid6"></i> <span>الطلبات</span></a>
+						<ul>
+							<li class="
+							"><a href="<?php echo base_url('dashboard/requests/create'); ?>">إنشاء طلب</a></li>
+							<li><a href="<?php echo base_url('dashboard/requests'); ?>">الطلبات</a></li>
+						</ul>
+					</li>
 					<!-- /page kits -->
 				</ul>
 			</div>
