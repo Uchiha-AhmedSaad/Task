@@ -15,21 +15,38 @@ class LoginController extends CI_Controller
 	public function Login()
 	{
 		$title = "LogIn";
-		$this->load->view('Dashboard/Login',get_defined_vars());
+		if (!$this->session->userdata('_token')) 
+		{
+			$this->load->view('Dashboard/Login',get_defined_vars());
+		}
+		else{
+			redirect('dashboard');
+		}
 	}
 	public function varify()
 	{
-		
-		$check_validate = $this->admin_model->validate();
-		if ($check_validate) 
-		{
-			$this->session->set_userdata('_token',uniqid());
-			echo "email and password is correct";
-			redirect('dashboard');
+		$this->form_validation->set_rules('email', 'Email', 'required');
+		$this->form_validation->set_rules('password', 'Password', 'required');
+        if ($this->form_validation->run() == TRUE)
+        {
+			$check_validate = $this->admin_model->validate();
+			if ($check_validate) 
+			{
+				$this->session->set_userdata('_token',uniqid());
+				echo "email and password is correct";
+				redirect('dashboard');
+			}
+			else
+			{
+				echo "email and password is incorrect";
+				redirect('login');
+			}
 		}
-		else{
+		else
+		{
 			redirect('login');
 		}
+
 	}
 	public function Logout()
 	{
