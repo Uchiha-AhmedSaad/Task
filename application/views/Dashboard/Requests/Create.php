@@ -16,14 +16,14 @@
 				<?php echo form_open('dashboard/requests/store'); ?>
 					<div class="row">
 						<div class="form-group col-sm-6">
-							<label class="form-check-label" >إسم العميل</label>
+							<label class="form-check-label" >Customer Name</label>
 							<input type="text" class="form-control" name="customer_name" >
 							<?php 	echo form_error('customer_name', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
 					</div>
 					<div class="row counter">
 						<div class="form-group col-sm-6">
-							  <label  for="items text-bold" class="control-label">المنتجات  </label>
+							  <label  for="items text-bold" class="control-label">Item </label>
 							  <select id="items"  name="items[0][items]" class="form-control">
 							  	<?php 
 									  	foreach ($items as  $key => $value)
@@ -35,7 +35,7 @@
 							<?php 	echo form_error('items[]', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
 						<div class="form-group col-sm-6">
-							<label class="form-check-label" >الكميه</label>
+							<label class="form-check-label" >Quantity</label>
 							<input type="number" class="form-control" name="items[0][quantities]" >
 							<?php 	echo form_error('items[]', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
@@ -45,7 +45,7 @@
 						<button type="button" onclick="Repeat()" style="float: right;" class="btn btn-primary btn-sm">Add Field</button>
 					</div>  
 					<div class="row" id="repeater"></div>
-					<div><button type="submit"> submit</button></div>
+					<div><button type="submit">Create</button></div>
 				<?php echo form_close(); ?>
 			</div>
 		</div>

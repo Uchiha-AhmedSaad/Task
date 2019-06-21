@@ -13,6 +13,7 @@
 	        	</div>
 			</div>
 			<div class="panel-body">
+				<a href="<?php echo site_url('dashboard/requests/create'); ?>" class="btn btn-primary">Create request</a >
 			    <table  class="table">
 			      <thead>
 			        <tr>

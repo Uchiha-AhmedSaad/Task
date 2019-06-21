@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | URL normally follow this pattern:
 |
 |	example.com/class/method/id/
-|
+| 
 | In some instances, however, you may want to remap this relationship
 | so that a different class/function is called than the one
 | corresponding to the URL.
@@ -58,13 +58,13 @@ $route['translate_uri_dashes'] = FALSE;
 	*this url belongs to Users Controller.
 
 */
-$route['login']								= 'Dashboard/LoginController/Login';
-$route['verify']							= 'Dashboard/LoginController/varify';
-$route['dashboard']							= 'Dashboard/DashboardController/Index';
-$route['dashboard/users']['GET']			= 'Dashboard/Users/UsersController/Index';
-$route['dashboard/users/create'] 			= 'Dashboard/Users/UsersController/Create';
-$route['dashboard/users/store'] 			= 'Dashboard/Users/UsersController/Store';
-$route['dashboard/users/edit/(:num)'] 		= 'Dashboard/Users/UsersController/Edit/$1';
+$route['login']										= 'Dashboard/LoginController/Login';
+$route['verify']									= 'Dashboard/LoginController/varify';
+$route['dashboard']									= 'Dashboard/DashboardController/Index';
+$route['dashboard/users']['GET']					= 'Dashboard/Users/UsersController/Index';
+$route['dashboard/users/create'] 					= 'Dashboard/Users/UsersController/Create';
+$route['dashboard/users/store'] 					= 'Dashboard/Users/UsersController/Store';
+$route['dashboard/users/edit/(:num)'] 				= 'Dashboard/Users/UsersController/Edit/$1';
 $route['dashboard/users/update/(:num)'] 			= 'Dashboard/Users/UsersController/Update/$1';
 $route['dashboard/users/delete/(:num)'] 			= 'Dashboard/Users/UsersController/Delete/$1';
 
@@ -72,12 +72,12 @@ $route['dashboard/users/delete/(:num)'] 			= 'Dashboard/Users/UsersController/De
 /*
 	*this url belongs to Items Controller.
 */
-$route['dashboard/items'] 					= 'Dashboard/Items/ItemsController/Index';
-$route['dashboard/items/create'] 			= 'Dashboard/Items/ItemsController/Create';
-$route['dashboard/items/store']['POST'] 			= 'Dashboard/Items/ItemsController/Store';
-$route['dashboard/items/edit/(:num)'] 		= 'Dashboard/Items/ItemsController/Edit/$1';
-$route['dashboard/items/update/(:num)'] 	= 'Dashboard/Items/ItemsController/Update/$1';
-$route['dashboard/items/delete/(:num)'] 	= 'Dashboard/Items/ItemsController/Delete/$1';
+$route['dashboard/items'] 						= 'Dashboard/Items/ItemsController/Index';
+$route['dashboard/items/create'] 				= 'Dashboard/Items/ItemsController/Create';
+$route['dashboard/items/store']['POST'] 		= 'Dashboard/Items/ItemsController/Store';
+$route['dashboard/items/edit/(:num)'] 			= 'Dashboard/Items/ItemsController/Edit/$1';
+$route['dashboard/items/update/(:num)'] 		= 'Dashboard/Items/ItemsController/Update/$1';
+$route['dashboard/items/delete/(:num)'] 		= 'Dashboard/Items/ItemsController/Delete/$1';
 
 /*
 	*this url belongs to Reuests Controller.

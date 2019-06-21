@@ -29,7 +29,7 @@ class ItemsController extends Admin_Controller
 	public function Store()
 	{
 		$title = "Store Items";
-		$this->form_validation->set_rules('item_name','Item Name','required|min_length[5]|max_length[100]');
+		$this->form_validation->set_rules('item_name','Item Name','required|is_unique[Items.item_name]|min_length[5]|max_length[100]');
 		$this->form_validation->set_rules('quantity','Quantity','required|integer|is_natural');
 		$this->form_validation->set_rules('price','Price','required');
 		if ($this->form_validation->run() == TRUE) 

@@ -13,6 +13,7 @@
             	</div>
 			</div>
 			<div class="panel-body">
+				<a href="<?php echo site_url('dashboard/items/create'); ?>" class="btn btn-primary">Create item</a >
 				    <table  class="table">
 				      <thead>
 				        <tr>
@@ -38,8 +39,8 @@
 										<td><?php echo $value->price; ?></td>
 										<td><?php echo $value->created_at; ?></td>
 										<td><?php echo $value->updated_at; ?></td>
-										<td><a href="<?php echo base_url('dashboard/items/delete/'.$value->id); ?>" class="btn btn-danger" type="button">Delete</a></td>
-										<td><a href="<?php echo base_url('dashboard/items/edit/'.$value->id); ?>" class="btn btn-primary" type="button">Edit</a></td>
+										<td><a href="<?php echo site_url('dashboard/items/delete/'.$value->id); ?>" class="btn btn-danger" type="button">Delete</a></td>
+										<td><a href="<?php echo site_url('dashboard/items/edit/'.$value->id); ?>" class="btn btn-primary" type="button">Edit</a></td>
 									</tr>
 				      			<?php
 				      		}

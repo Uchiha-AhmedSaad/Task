@@ -16,36 +16,36 @@
 				<?php echo form_open('dashboard/users/update/'.$user->id); ?>
 					<div class="row">
 						<div class="form-group col-sm-6">
-							<label class="form-check-label" >إسم المستخدم</label>
+							<label class="form-check-label" >Username</label>
 							<input type="text" class="form-control" name="username" value="<?php echo $user->username;?>" >
 							<?php 	echo form_error('username', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
 						<div class="from-group col-sm-6">
-							<label class="form-check-label">الإسم الأول</label>
+							<label class="form-check-label">Firstname</label>
 							<input type="text" class="form-control" name="first_name" value="<?php echo $user->first_name;?>" >
 							<?php 	echo form_error('first_name', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
 					</div>
 					<div class="row">
 						<div class="from-group col-sm-6">
-							<label class="form-check-label">الإسم الثانى</label>
+							<label class="form-check-label">Lastname</label>
 							<input type="text" class="form-control" name="last_name" value="<?php echo $user->last_name;?>">
 							<?php 	echo form_error('last_name', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
 						<div class="from-group col-sm-6">
-							<label class="form-check-label">الإيميل</label>
+							<label class="form-check-label">Email</label>
 							<input type="email" class="form-control" name="email" value="<?php echo $user->email;?>">
 							<?php 	echo form_error('email', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>	
 					</div>
 					<div class="row">
 						<div class="from-group col-sm-6">
-							<label class="form-check-label">الباسورد</label>
+							<label class="form-check-label">Password</label>
 							<input type="password"  class="form-control" name="password" >
 							<?php 	echo form_error('password', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
 						<div class="from-group col-sm-6">
-							<label class="form-check-label">تأكيد الباسورد</label>
+							<label class="form-check-label">Password confirm</label>
 							<input type="password"  class="form-control" name="password_confirm" >
 								<?php 	echo form_error('password_confirm', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
@@ -53,7 +53,7 @@
 					<div class="row">
 						<div class="from-group col-sm-12">
 							<br>
-							<button type="submit" class="btn btn-primary">تعديل</button>
+							<button type="submit" class="btn btn-primary">Update</button>
 						</div>
 					</div>	
 				<?php echo form_close(); ?>

@@ -10,6 +10,7 @@ class LoginController extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
+		$this->load->model('admin_model');
 	}
 	public function Login()
 	{
@@ -18,7 +19,7 @@ class LoginController extends CI_Controller
 	}
 	public function varify()
 	{
-		$this->load->model('admin_model');
+		
 		$check_validate = $this->admin_model->validate();
 		if ($check_validate) 
 		{
