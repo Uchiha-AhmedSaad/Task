@@ -34,8 +34,29 @@
 									<td><?php echo $value->id; ?></td>
 									<td><?php echo $value->rdate; ?></td>
 									<td><?php echo $value->customer_name; ?></td>
-									<td><?php echo $value->items; ?></td>
-									<td><?php echo $value->quantities; ?></td>
+									<td>
+									<?php 
+										$items = unserialize($value->items);
+										if (is_array($items)) {
+											foreach ($items as $item) 
+											{
+												echo '<br>'.$item.' - ';
+											}
+										}
+									 ?>
+										
+									</td>
+									<td>
+										<?php 
+											$quantities = unserialize($value->quantities);
+											if (is_array($quantities)) {
+												foreach ($quantities as $quantity) 
+												{
+													echo '<br>'.$quantity.' - ';
+												}
+											}
+										 ?>
+									</td>
 									<td><a href="<?php echo site_url('dashboard/requests/delete/'.$value->id); ?>" class="btn btn-danger" type="button">Delete</a></td>
 								</tr>
 			      			<?php

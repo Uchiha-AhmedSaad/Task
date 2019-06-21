@@ -22,9 +22,9 @@ class UsersController extends Admin_Controller {
 	}
 	public function Store()
 	{
-        $this->form_validation->set_rules('username', 'Username', 'required|min_length[5]|max_length[50]');
-        $this->form_validation->set_rules('first_name', 'First Name', 'required|min_length[5]|max_length[50]');
-        $this->form_validation->set_rules('last_name', 'Last Name', 'required|min_length[5]|max_length[50]');
+        $this->form_validation->set_rules('username', 'Username', 'required|min_length[4]|max_length[50]');
+        $this->form_validation->set_rules('first_name', 'First Name', 'required|min_length[4]|max_length[50]');
+        $this->form_validation->set_rules('last_name', 'Last Name', 'required|min_length[4]|max_length[50]');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
         $this->form_validation->set_rules('password_confirm', 'Password Confirm', 'required|min_length[8]|matches[password]');
@@ -57,9 +57,9 @@ class UsersController extends Admin_Controller {
 	public function Update(int $id)
 	{
 		$title = "Update";
-        $this->form_validation->set_rules('username', 'Username', 'required|min_length[5]|max_length[50]');
-        $this->form_validation->set_rules('first_name', 'First Name', 'required|min_length[5]|max_length[50]');
-        $this->form_validation->set_rules('last_name', 'Last Name', 'required|min_length[5]|max_length[50]');
+        $this->form_validation->set_rules('username', 'Username', 'required|min_length[4]|max_length[50]');
+        $this->form_validation->set_rules('first_name', 'First Name', 'required|min_length[4]|max_length[50]');
+        $this->form_validation->set_rules('last_name', 'Last Name', 'required|min_length[4]|max_length[50]');
        
 		$user = $this->User_model->get($id);
 		if (!empty($this->input->post('password'))) 

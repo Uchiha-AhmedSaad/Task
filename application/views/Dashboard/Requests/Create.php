@@ -45,7 +45,7 @@
 						<button type="button" onclick="Repeat()" style="float: right;" class="btn btn-primary btn-sm">Add Field</button>
 					</div>  
 					<div class="row" id="repeater"></div>
-					<div><button type="submit">Create</button></div>
+					<div><button type="submit" class="btn btn-primary">Create</button></div>
 				<?php echo form_close(); ?>
 			</div>
 		</div>

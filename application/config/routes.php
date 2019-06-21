@@ -59,6 +59,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 */
 $route['login']										= 'Dashboard/LoginController/Login';
+$route['logout']									= 'Dashboard/LoginController/Logout';
 $route['verify']									= 'Dashboard/LoginController/varify';
 $route['dashboard']									= 'Dashboard/DashboardController/Index';
 $route['dashboard/users']['GET']					= 'Dashboard/Users/UsersController/Index';
