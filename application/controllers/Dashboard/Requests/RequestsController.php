@@ -73,6 +73,7 @@ class RequestsController extends Admin_Controller
 			$items = $this->Item_model->get();
 			return $this->load->view('Dashboard/Requests/Create',compact('items'));
 		}
+		$this->session->set_flashdata('status',['success','requests Created successfully']);
 		return redirect('dashboard/requests', 'refresh');
 	}
 	public function Delete(int $id)
@@ -91,6 +92,7 @@ class RequestsController extends Admin_Controller
 			}
 		}
 		$this->Request_model->remove($id);
+		$this->session->set_flashdata('status',['success','request Deleted successfully']);
 		return redirect('dashboard/requests', 'refresh');
 	}
 }

@@ -15,5 +15,24 @@
 
 	</div>
 	<!-- /page container -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script type="text/javascript">
+<?php 
+if ($this->session->flashdata('status')) 
+{
+	?> 
+
+		swal({
+		  title: "Good job!",
+		  text: "<?php echo $this->session->flashdata('status')[1];?>",
+		  icon: "<?php echo $this->session->flashdata('status')[0];?>",
+		});
+	<?php
+}
+
+ ?>
+	
+</script>
 </body>
 </html>

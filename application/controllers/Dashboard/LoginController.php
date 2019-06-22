@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * 
  */
-class LoginController extends CI_Controller
+class LoginController extends Public_Controller
 {
 	
 	function __construct()

@@ -43,6 +43,7 @@ class ItemsController extends Admin_Controller
 				$data['updated_at'] 		= date('Y-m-d h-i-s');
 			}
 			$items = $this->Item_model->save($data);
+			$this->session->set_flashdata('status',['success','Item Created successfully']);
 			return redirect('dashboard/items', 'refresh');
 		}
 		else{
@@ -75,6 +76,7 @@ class ItemsController extends Admin_Controller
 				$data['updated_at'] 		= date('Y-m-d h-i-s');
 			}
 			$item = $this->Item_model->save($data,$id);
+			$this->session->set_flashdata('status',['success','Item Updated successfully']);
 			return redirect('dashboard/items', 'refresh');			
 		}
 		else
@@ -85,6 +87,7 @@ class ItemsController extends Admin_Controller
 	public function Delete(int $id)
 	{
 		$this->Item_model->remove($id);
+		$this->session->set_flashdata('status',['success','Item Deleted successfully']);
 		return redirect('dashboard/items', 'refresh');
 	}
 }

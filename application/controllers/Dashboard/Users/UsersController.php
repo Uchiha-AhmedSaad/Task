@@ -46,6 +46,7 @@ class UsersController extends Admin_Controller {
         else{
         	return $this->load->view('Dashboard/Users/Create');
         }
+        $this->session->set_flashdata('status',['success','Users Created successfully']);
 		return redirect('dashboard/users', 'refresh');
 	}
 	public function Edit(int $id)
@@ -86,12 +87,13 @@ class UsersController extends Admin_Controller {
 		else{
 			return $this->load->view('Dashboard/Users/Edit',compact('user'));
 		}
-
+		$this->session->set_flashdata('status',['success','Users Edit successfully']);
 		return redirect('dashboard/users', 'refresh');
 	}
 	public function Delete(int $id)
 	{
 		$this->User_model->remove($id);
+		$this->session->set_flashdata('status',['success','Users Deleted successfully']);
 		return redirect('dashboard/users', 'refresh');
 	}
 }
