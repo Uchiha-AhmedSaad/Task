@@ -13,9 +13,5 @@ class MY_Controller extends CI_Controller
 	{
 		//this parent refer to CI_Controller.
 		parent::__construct();
-
-		$this->data['errors'] = array();
-
-		$this->data['site_name'] = config_item('site_name');
 	}
 }
