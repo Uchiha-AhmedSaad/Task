@@ -65,6 +65,7 @@ class RequestsController extends Admin_Controller
 				$data['customer_name'] 	= $this->input->post('customer_name');
 				$data['items'] 			= $items;
 				$data['quantities'] 	= $quantities;
+				$data['rdate']			= date('Y-F-d h-i-s');
 			}
 			$users = $this->Request_model->save($data);
 		}

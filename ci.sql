@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 22, 2019 at 12:58 AM
+-- Generation Time: Jun 22, 2019 at 03:44 AM
 -- Server version: 5.7.26-0ubuntu0.19.04.1
 -- PHP Version: 7.2.19-0ubuntu0.19.04.1
 
@@ -41,7 +41,7 @@ CREATE TABLE `Items` (
 
 INSERT INTO `Items` (`id`, `item_name`, `quantity`, `price`, `created_at`, `updated_at`) VALUES
 (6, 'keyboard', 1980, 100, '2019-06-21 09:54:45', '2019-06-21 09:54:45'),
-(7, 'mouse', 1980, 100, '2019-06-21 09:55:12', '2019-06-21 09:55:12');
+(7, 'mouse', 2000, 100, '2019-06-21 09:55:12', '2019-06-21 09:55:12');
 
 -- --------------------------------------------------------
 
@@ -51,7 +51,7 @@ INSERT INTO `Items` (`id`, `item_name`, `quantity`, `price`, `created_at`, `upda
 
 CREATE TABLE `Requests` (
   `id` int(11) NOT NULL,
-  `rdate` timestamp NULL DEFAULT NULL,
+  `rdate` varchar(255) DEFAULT NULL,
   `customer_name` varchar(255) CHARACTER SET utf8 NOT NULL,
   `items` longtext CHARACTER SET utf8 NOT NULL,
   `quantities` longtext CHARACTER SET utf8 NOT NULL
@@ -62,7 +62,7 @@ CREATE TABLE `Requests` (
 --
 
 INSERT INTO `Requests` (`id`, `rdate`, `customer_name`, `items`, `quantities`) VALUES
-(7, NULL, 'Ahmed Saad', 'a:2:{i:0;s:8:\"keyboard\";i:1;s:5:\"mouse\";}', 'a:2:{i:0;s:2:\"20\";i:1;s:2:\"20\";}');
+(8, '2019-June-22 03-43-06', 'Ahmed Saad', 'a:1:{i:0;s:8:\"keyboard\";}', 'a:1:{i:0;s:2:\"10\";}');
 
 -- --------------------------------------------------------
 
@@ -123,7 +123,7 @@ ALTER TABLE `Items`
 -- AUTO_INCREMENT for table `Requests`
 --
 ALTER TABLE `Requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `users`
 --
