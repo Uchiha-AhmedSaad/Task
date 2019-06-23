@@ -13,7 +13,10 @@ class MY_Model extends CI_Model
 	{
 		parent::__construct();
 	}
-
+	public function countAll()
+	{
+		return $this->db->get($this->_table_name)->num_rows();
+	}
 	public function get($id = NULL, $singel = FALSE)
 	{
 		if ($id != Null) {

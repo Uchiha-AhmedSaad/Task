@@ -12,8 +12,7 @@ class UsersController extends Admin_Controller {
 	{
 		$title = "Users";
 		$users = $this->User_model->get();
-
-		$this->load->view('Dashboard/Users/Index',get_defined_vars());
+		$this->load->view('Dashboard/Users/Index',compact('users'));
 	}
 	public function Create()
 	{

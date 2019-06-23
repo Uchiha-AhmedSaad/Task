@@ -10,7 +10,6 @@ class MY_Controller extends CI_Controller
 	*/
 	function __construct()
 	{
-		//this parent refer to CI_Controller.
 		parent::__construct();
 	}
 }
