@@ -5,32 +5,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class RequestsController extends Admin_Controller
 {
-	
 	function __construct()
 	{
+		$this->model_name = "Request_model";
 		parent::__construct();
-		$this->load->model('Request_model');
 		$this->load->model('Item_model');
+		$this->form_validation->set_rules('customer_name', 'Customer Name', 'required|min_length[5]|max_length[50]');
+		$this->form_validation->set_rules('items[]', 'Items', 'required');
 	}
 	public function Index()
 	{
-		$title = "Requests";
-		$requests = $this->Request_model->get();
-		$this->load->view('Dashboard/Requests/Index',get_defined_vars());
+		$this->Indexes("Requests","requests","Request_model");
 	}
 	public function Create()
 	{
-		$title = "Create Request";
-		$items = $this->Item_model->get();
-		$this->load->view('Dashboard/Requests/Create',get_defined_vars());
-
+		$this->Creates("Create Request","requests","Item_model","items");
 	}
 	public function Store()
 	{
-
-		$this->form_validation->set_rules('customer_name', 'Customer Name', 'required|min_length[5]|max_length[50]');
-		$this->form_validation->set_rules('items[]', 'Items', 'required');
-
 		//the title of the page
 		$title = "Store Request";
 		//check if items not null or empty by array_filter with both
@@ -69,9 +61,10 @@ class RequestsController extends Admin_Controller
 			}
 			$users = $this->Request_model->save($data);
 		}
-		else{
+		else
+		{
 			$items = $this->Item_model->get();
-			return $this->load->view('Dashboard/Requests/Create',compact('items'));
+			return $this->load->view('Dashboard/requests/Create',compact('items'));
 		}
 		$this->session->set_flashdata('status',['success','requests Created successfully']);
 		return redirect('dashboard/requests', 'refresh');
@@ -91,8 +84,6 @@ class RequestsController extends Admin_Controller
 				$this->Item_model->save($data_quantity,$get_item->id);
 			}
 		}
-		$this->Request_model->remove($id);
-		$this->session->set_flashdata('status',['success','request Deleted successfully']);
-		return redirect('dashboard/requests', 'refresh');
+		$this->Deletes($id,'request','Request_model','requests');
 	}
 }

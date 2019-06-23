@@ -9,29 +9,23 @@ class ItemsController extends Admin_Controller
 {
 	function __construct()
 	{
+		$this->model_name = 'Item_model';
 		parent::__construct();
-		$this->load->model('Item_model');
-	}
-	public function Index()
-	{
-		/*
-			* this is the model of Items .
-		*/
-		$title = "Items";
-		$items = $this->Item_model->get();
-		$this->load->view('Dashboard/Items/Index',get_defined_vars());
-	}
-	public function Create()
-	{
-		$title = "Create Items";
-		$this->load->view('Dashboard/Items/Create',get_defined_vars());
-	}
-	public function Store()
-	{
-		$title = "Store Items";
 		$this->form_validation->set_rules('item_name','Item Name','required|is_unique[Items.item_name]|min_length[5]|max_length[100]');
 		$this->form_validation->set_rules('quantity','Quantity','required|integer|is_natural');
 		$this->form_validation->set_rules('price','Price','required');
+		//current_url()
+	}
+	public function Index()
+	{
+		$this->Indexes("Items","items","Item_model");
+	}
+	public function Create()
+	{
+		$this->Creates("Create Items","items");
+	}
+	public function save($id = Null)
+	{
 		if ($this->form_validation->run() == TRUE) 
 		{
 			if ($this->input->server("REQUEST_METHOD") == 'POST') 
@@ -42,52 +36,32 @@ class ItemsController extends Admin_Controller
 				$data['created_at'] 		= date('Y-m-d h-i-s');
 				$data['updated_at'] 		= date('Y-m-d h-i-s');
 			}
-			$items = $this->Item_model->save($data);
-			$this->session->set_flashdata('status',['success','Item Created successfully']);
-			return redirect('dashboard/items', 'refresh');
-		}
-		else{
-			$this->load->view('Dashboard/Items/Create');
-		}
-
-	}
-	public function Edit(int $id)
-	{
-		$title = "Edit Items";
-		$item = $this->Item_model->get($id);
-		$this->load->view('Dashboard/Items/Edit',get_defined_vars());
-	}
-	public function Update(int $id)
-	{
-		$title = "Update Items";
-		$item = $this->Item_model->get($id);
-
-		$this->form_validation->set_rules('item_name', 'Item Name', 'required|min_length[5]|max_length[100]');
-		$this->form_validation->set_rules('quantity', 'Quantity', 'required|integer|is_natural');
-		$this->form_validation->set_rules('price', 'Price', 'required');
-
-		if ($this->form_validation->run() == TRUE) 
-		{
-			if ($this->input->server('REQUEST_METHOD') == 'POST') 
+			if (is_null($id)) 
 			{
-				$data['item_name'] 			= $this->input->post('item_name');
-				$data['quantity'] 			= $this->input->post('quantity');
-				$data['price'] 				= $this->input->post('price');
-				$data['updated_at'] 		= date('Y-m-d h-i-s');
+				$items = $this->Item_model->save($data);						
 			}
-			$item = $this->Item_model->save($data,$id);
-			$this->session->set_flashdata('status',['success','Item Updated successfully']);
-			return redirect('dashboard/items', 'refresh');			
+			else
+			{
+				$item = $this->Item_model->save($data,$id);
+			}
+			$this->session->set_flashdata('status',['success','Item '
+				.(is_null($id)) ? 'Created' : 'Updated'.' successfully']);
+				return redirect('dashboard/items', 'refresh');
 		}
 		else
 		{
-			$this->load->view('Dashboard/Items/Edit',compact('item'));
+			(is_null($id)) ? $this->load->view('Dashboard/items/Create') :
+			$item = $this->Item_model->get($id); 
+			$this->load->view('Dashboard/items/Edit',compact('item'));
 		}
 	}
+	public function Edit(int $id)
+	{
+		$this->Edits($id,"Edit Items","items","Item_model");
+	}
+
 	public function Delete(int $id)
 	{
-		$this->Item_model->remove($id);
-		$this->session->set_flashdata('status',['success','Item Deleted successfully']);
-		return redirect('dashboard/items', 'refresh');
+		$this->Deletes($id,'items','Item_model','items');
 	}
 }

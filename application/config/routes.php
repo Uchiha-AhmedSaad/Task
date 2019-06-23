@@ -62,11 +62,11 @@ $route['login']										= 'Dashboard/LoginController/Login';
 $route['logout']									= 'Dashboard/LoginController/Logout';
 $route['verify']									= 'Dashboard/LoginController/varify';
 $route['dashboard']									= 'Dashboard/DashboardController/Index';
-$route['dashboard/users/(:any)']['GET']				= 'Dashboard/Users/UsersController/Index/$1';
+$route['dashboard/users']['GET']					= 'Dashboard/Users/UsersController/Index';
 $route['dashboard/users/create'] 					= 'Dashboard/Users/UsersController/Create';
-$route['dashboard/users/store'] 					= 'Dashboard/Users/UsersController/Store';
+$route['dashboard/users/store'] 					= 'Dashboard/Users/UsersController/save';
 $route['dashboard/users/edit/(:num)'] 				= 'Dashboard/Users/UsersController/Edit/$1';
-$route['dashboard/users/update/(:num)'] 			= 'Dashboard/Users/UsersController/Update/$1';
+$route['dashboard/users/update/(:num)'] 			= 'Dashboard/Users/UsersController/save/$1';
 $route['dashboard/users/delete/(:num)'] 			= 'Dashboard/Users/UsersController/Delete/$1';
 
 
@@ -75,9 +75,9 @@ $route['dashboard/users/delete/(:num)'] 			= 'Dashboard/Users/UsersController/De
 */
 $route['dashboard/items'] 						= 'Dashboard/Items/ItemsController/Index';
 $route['dashboard/items/create'] 				= 'Dashboard/Items/ItemsController/Create';
-$route['dashboard/items/store']['POST'] 		= 'Dashboard/Items/ItemsController/Store';
+$route['dashboard/items/store']['POST'] 		= 'Dashboard/Items/ItemsController/save';
 $route['dashboard/items/edit/(:num)'] 			= 'Dashboard/Items/ItemsController/Edit/$1';
-$route['dashboard/items/update/(:num)'] 		= 'Dashboard/Items/ItemsController/Update/$1';
+$route['dashboard/items/update/(:num)'] 		= 'Dashboard/Items/ItemsController/save/$1';
 $route['dashboard/items/delete/(:num)'] 		= 'Dashboard/Items/ItemsController/Delete/$1';
 
 /*
