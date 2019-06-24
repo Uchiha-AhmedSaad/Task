@@ -19,25 +19,25 @@
 			<div class="panel-body">
 				<div class="row">
 					<div class="form-group col-sm-6">
-						<label class="form-check-label" >Item Name</label>
+						<label for="item_name" class="form-check-label" >Item Name</label>
 						<input type="text" required class="form-control" name="item_name" >
 						<?php 	echo form_error('item_name', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						<div class="help-block with-errors"></div>
 					</div>
-					<div class="from-group col-sm-6">
-						<label class="form-check-label">Quantity</label>
-						<input type="number" required class="form-control" name="quantity" >
+					  <div class="form-group col-sm-6">
+					    <label for="quantity" class="control-label">Quantity</label>
+					    <input type="number" class="form-control" id="quantity" name="quantity" placeholder="quantity" required>
+					    <div class="help-block with-errors"></div>
 						<?php 	echo form_error('quantity', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
-						<div class="help-block with-errors"></div>
-					</div>
+					  </div>
 				</div>
 				<div class="row">
-					<div class="from-group col-sm-12">
-						<label class="form-check-label">Price</label>
-						<input type="number" required step="0.5" class="form-control" name="price" >
+					  <div class="form-group col-sm-6">
+					    <label for="price" class="control-label">Price</label>
+					    <input type="number" required step="0.5" class="form-control" id="price" name="price" placeholder="price" required>
+					    <div class="help-block with-errors"></div>
 						<?php 	echo form_error('price', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
-						<div class="help-block with-errors"></div>
-					</div>
+					  </div>
 				</div>
 				<div class="row">
 					<div class="from-group col-sm-12">

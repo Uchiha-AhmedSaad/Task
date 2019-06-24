@@ -16,42 +16,44 @@
 				<?php echo form_open('dashboard/users/update/'.$users->id,['id' => 'myForm', 'data-toggle' => 'validator', 'role' => 'form']); ?>
 					<div class="row">
 						<div class="form-group col-sm-6">
-							<label class="form-check-label" >Username</label>
-							<input type="text" required class="form-control" name="username" value="<?php echo $users->username;?>" >
+							<label class="form-check-label" for="username" >Username</label>
+							<input type="text" class="form-control" required id="username" value="<?php echo $users->username;?>" name="username" >
 							<div class="help-block with-errors"></div>
-							<?php 	echo form_error('username', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
+						<?php 	echo form_error('username', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
-						<div class="from-group col-sm-6">
-							<label class="form-check-label">Firstname</label>
-							<input type="text" required  class="form-control" name="first_name" value="<?php echo $users->first_name;?>" >
+						<div class="form-group col-sm-6">
+							<label class="form-check-label" for="first_name" >First name</label>
+							<input type="text" class="form-control" value="<?php echo $users->first_name;?>" required id="first_name" name="first_name" >
 							<div class="help-block with-errors"></div>
-							<?php 	echo form_error('first_name', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
+						<?php 	echo form_error('first_name', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
 					</div>
 					<div class="row">
-						<div class="from-group col-sm-6">
-							<label class="form-check-label">Lastname</label>
-							<input type="text" required class="form-control" name="last_name" value="<?php echo $users->last_name;?>">
+						<div class="form-group col-sm-6">
+							<label class="form-check-label" for="last_name" >Lastname</label>
+							<input type="text" class="form-control" value="<?php echo $users->last_name;?>" required id="last_name" name="last_name" >
 							<div class="help-block with-errors"></div>
-							<?php 	echo form_error('last_name', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
+						<?php 	echo form_error('last_name', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
-						<div class="from-group col-sm-6">
-							<label class="form-check-label">Email</label>
-							<input type="email" required class="form-control" name="email" value="<?php echo $users->email;?>">
-							<div class="help-block with-errors"></div>
-							<?php 	echo form_error('email', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
-						</div>	
+					  <div class="form-group col-sm-6">
+					    <label for="inputEmail" class="control-label">Email</label>
+					    <input type="email" value="<?php echo $users->email;?>" class="form-control" id="inputEmail" name="email" placeholder="Email" data-error="that email address is invalid" required>
+					    <div class="help-block with-errors"></div>
+						<?php 	echo form_error('email', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
+					  </div>
 					</div>
 					<div class="row">
-						<div class="from-group col-sm-6">
-							<label class="form-check-label">Password</label>
-							<input type="password"  class="form-control" name="password" >
-							<?php 	echo form_error('password', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
+						<div class="form-group col-sm-6">
+							<label class="form-check-label" for="password" >Password</label>
+							<input type="text" class="form-control" required id="password" name="password" >
+							<div class="help-block with-errors"></div>
+						<?php 	echo form_error('password', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
-						<div class="from-group col-sm-6">
-							<label class="form-check-label">Password confirm</label>
-							<input type="password"  class="form-control" name="password_confirm" >
-								<?php 	echo form_error('password_confirm', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
+						<div class="form-group col-sm-6">
+							<label class="form-check-label" for="password_confirm" >Password Confirm</label>
+							<input type="text" class="form-control" required id="password_confirm" name="password_confirm" >
+							<div class="help-block with-errors"></div>
+						<?php 	echo form_error('password_confirm', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
 					</div>
 					<div class="row">
@@ -60,6 +62,7 @@
 							<button type="submit" class="btn btn-primary">Update</button>
 						</div>
 					</div>	
+
 				<?php echo form_close(); ?>
 			</div>
 		</div>

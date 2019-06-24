@@ -18,8 +18,9 @@
 						<div class="form-group col-sm-6">
 							<label class="form-check-label" >Customer Name</label>
 							<input type="text" required class="form-control" name="customer_name" >
-							<div class="help-block with-errors"></div>
+							
 							<?php 	echo form_error('customer_name', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
+							<div class="help-block with-errors"></div>
 						</div>
 					</div>
 					<div class="row counter">
