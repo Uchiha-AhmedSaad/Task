@@ -13,18 +13,19 @@
             	</div>
 			</div>
 			<div class="panel-body">
-				<?php echo form_open('dashboard/requests/store'); ?>
+				<?php echo form_open('dashboard/requests/store',['id' => 'myForm', 'data-toggle' => 'validator', 'role' => 'form']); ?>
 					<div class="row">
 						<div class="form-group col-sm-6">
 							<label class="form-check-label" >Customer Name</label>
-							<input type="text" class="form-control" name="customer_name" >
+							<input type="text" required class="form-control" name="customer_name" >
+							<div class="help-block with-errors"></div>
 							<?php 	echo form_error('customer_name', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
 					</div>
 					<div class="row counter">
 						<div class="form-group col-sm-6">
 							  <label  for="items text-bold" class="control-label">Item </label>
-							  <select id="items"  name="items[0][items]" class="form-control">
+							  <select id="items" required  name="items[0][items]" class="form-control">
 							  	<?php 
 									  	foreach ($items as  $key => $value)
 									  	{
@@ -32,12 +33,14 @@
 									  	}
 							  	 ?>
 							  </select>
+							  <div class="help-block with-errors"></div>
 							<?php 	echo form_error('items[]', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
 						<div class="form-group col-sm-6">
 							<label class="form-check-label" >Quantity</label>
-							<input type="number" class="form-control" name="items[0][quantities]" >
+							<input type="number" required class="form-control" name="items[0][quantities]" >
 							<?php 	echo form_error('items[]', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
+							<div class="help-block with-errors"></div>
 						</div>
 					</div>
 					<div class="form-group col-sm-12">
@@ -59,23 +62,25 @@
         '<div class=" row counter">'
             +'<div class="form-group col-sm-6">'
                 +'<label  for="items" class="control-label">المنتجات</label>'
-                +'<select type="text"  class=" form-control" name="items['+counter+'][items]">'
+                +'<select type="text" required  class=" form-control" name="items['+counter+'][items]">'
 			  	<?php 
 			  	foreach ($items as  $key => $value)
 			  	{
 			  		?> 
-						+'<option value="<?php echo $value->item_name; ?>"><?php echo $value->item_name; ?>'
+						+'<option  value="<?php echo $value->item_name; ?>"><?php echo $value->item_name; ?>'
 						+'</option>'
 			  		<?php
 			  	}
 				?>
                 +'<option value=""></option>'
                 +'</select>'
+                +'<div class="help-block with-errors"></div>'
             +'</div>'
 
             +'<div class="form-group col-sm-5">'
                 +'<label  for="items" class="control-label">المنتجات</label>'
-                +'<input type="number"  class=" form-control" name="items['+counter+'][quantities]">'
+                +'<input type="number" required class=" form-control" name="items['+counter+'][quantities]">'
+                +'<div class="help-block with-errors"></div>'
             +'</div>'
 
             +'<div class="form-group col-sm-1">'

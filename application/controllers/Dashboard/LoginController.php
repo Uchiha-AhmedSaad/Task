@@ -11,6 +11,8 @@ class LoginController extends Public_Controller
 	{
 		parent::__construct();
 		$this->load->model('admin_model');
+		$this->form_validation->set_rules('email', 'Email', 'required');
+		$this->form_validation->set_rules('password', 'Password', 'required');
 	}
 	public function Login()
 	{
@@ -25,8 +27,6 @@ class LoginController extends Public_Controller
 	}
 	public function varify()
 	{
-		$this->form_validation->set_rules('email', 'Email', 'required');
-		$this->form_validation->set_rules('password', 'Password', 'required');
         if ($this->form_validation->run() == TRUE)
         {
 			$check_validate = $this->admin_model->validate();
@@ -38,8 +38,8 @@ class LoginController extends Public_Controller
 			}
 			else
 			{
-				echo "email and password is incorrect";
-				redirect('login');
+				$data = "This login failed probably by email or password";
+				$this->load->view('Dashboard/Login',compact('data'));
 			}
 		}
 		else

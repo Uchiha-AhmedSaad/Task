@@ -52,7 +52,7 @@
 				<div class="content">
 
 					<!-- Simple login form -->
-					<?php echo form_open('verify'); ?>
+					<?php echo form_open('verify',['id' => 'myForm', 'data-toggle' => 'validator', 'role' => 'form']); ?>
 						<div class="panel panel-body login-form">
 							<div class="text-center">
 								<div class="icon-object border-slate-300 text-slate-300"><i class="icon-reading"></i></div>
@@ -60,25 +60,27 @@
 							</div>
 
 							<div class="form-group has-feedback has-feedback-left">
-								<input type="email" class="form-control" name="email" placeholder="Email">
+								<input type="email" required class="form-control" name="email" placeholder="Email">
 								<div class="form-control-feedback">
 									<i class="icon-user text-muted"></i>
 								</div>
+								<?php 	echo form_error('email', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 							</div>
 
 							<div class="form-group has-feedback has-feedback-left">
-								<input type="password" class="form-control" name="password" placeholder="Password">
+								<input type="password" required class="form-control" name="password" placeholder="Password">
 								<div class="form-control-feedback">
 									<i class="icon-lock2 text-muted"></i>
 								</div>
 							</div>
+							<?php if (isset($data)) {
+								?> 
 
+								<div class="validation-error-label" role="alert"><strong><?php echo $data; ?></strong></div>
+								<?php
+							} ?>
 							<div class="form-group">
 								<button type="submit" class="btn bg-pink-400 btn-block">Sign in <i class="icon-circle-left2 position-right"></i></button>
-							</div>
-
-							<div class="text-center">
-								<a href="login_password_recover.html">Forgot password?</a>
 							</div>
 						</div>
 					<?php echo form_close(); ?>

@@ -40,13 +40,13 @@ class UsersController extends Admin_Controller {
 			}
 			else
 			{
-				$user = $this->User_model->get($id);
-				if ($this->input->post('email') != $user->email) 
+				$users = $this->User_model->get($id);
+				if ($this->input->post('email') != $users->email) 
 				{
 					$this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
 					$data['email'] 		=  	$this->input->post('email');
 				}
-				else{$data['email'] 		=  	$user->email;}
+				else{$data['email'] 		=  	$users->email;}
 
 				if (!empty($this->input->post('password')) OR 
 					!empty($this->input->post('password_confirm'))) 
@@ -74,7 +74,7 @@ class UsersController extends Admin_Controller {
         else
         {
         	if (is_null($id)) {
-        		return $this->load->view('Dashboard/users/create');
+        		return $this->load->view('Dashboard/users/Create');
         	}
         	else{
 	        	$this->load->view('Dashboard/users/Edit',compact('users'));

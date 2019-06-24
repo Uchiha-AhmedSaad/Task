@@ -13,28 +13,32 @@
             	</div>
 			</div>
 			<div class="panel-body">
-				<?php echo form_open('dashboard/users/update/'.$users->id); ?>
+				<?php echo form_open('dashboard/users/update/'.$users->id,['id' => 'myForm', 'data-toggle' => 'validator', 'role' => 'form']); ?>
 					<div class="row">
 						<div class="form-group col-sm-6">
 							<label class="form-check-label" >Username</label>
-							<input type="text" class="form-control" name="username" value="<?php echo $users->username;?>" >
+							<input type="text" required class="form-control" name="username" value="<?php echo $users->username;?>" >
+							<div class="help-block with-errors"></div>
 							<?php 	echo form_error('username', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
 						<div class="from-group col-sm-6">
 							<label class="form-check-label">Firstname</label>
-							<input type="text" class="form-control" name="first_name" value="<?php echo $users->first_name;?>" >
+							<input type="text" required  class="form-control" name="first_name" value="<?php echo $users->first_name;?>" >
+							<div class="help-block with-errors"></div>
 							<?php 	echo form_error('first_name', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
 					</div>
 					<div class="row">
 						<div class="from-group col-sm-6">
 							<label class="form-check-label">Lastname</label>
-							<input type="text" class="form-control" name="last_name" value="<?php echo $users->last_name;?>">
+							<input type="text" required class="form-control" name="last_name" value="<?php echo $users->last_name;?>">
+							<div class="help-block with-errors"></div>
 							<?php 	echo form_error('last_name', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>
 						<div class="from-group col-sm-6">
 							<label class="form-check-label">Email</label>
-							<input type="email" class="form-control" name="email" value="<?php echo $users->email;?>">
+							<input type="email" required class="form-control" name="email" value="<?php echo $users->email;?>">
+							<div class="help-block with-errors"></div>
 							<?php 	echo form_error('email', '<div class="validation-error-label" role="alert"><strong>', '</div></strong>'); ?>
 						</div>	
 					</div>

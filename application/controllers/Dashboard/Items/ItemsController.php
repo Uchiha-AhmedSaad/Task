@@ -11,7 +11,15 @@ class ItemsController extends Admin_Controller
 	{
 		$this->model_name = 'Item_model';
 		parent::__construct();
-		$this->form_validation->set_rules('item_name','Item Name','required|is_unique[Items.item_name]|min_length[5]|max_length[100]');
+
+		if (strpos(current_url(),'store') == TRUE) 
+		{
+			$this->form_validation->set_rules('item_name','Item Name','required|is_unique[Items.item_name]|min_length[5]|max_length[100]');
+		}
+		elseif (strpos(current_url(),'update') == TRUE) {
+			$this->form_validation->set_rules('item_name','Item Name','required|min_length[5]|max_length[100]');
+		}
+
 		$this->form_validation->set_rules('quantity','Quantity','required|integer|is_natural');
 		$this->form_validation->set_rules('price','Price','required');
 		//current_url()
@@ -51,8 +59,8 @@ class ItemsController extends Admin_Controller
 		else
 		{
 			(is_null($id)) ? $this->load->view('Dashboard/items/Create') :
-			$item = $this->Item_model->get($id); 
-			$this->load->view('Dashboard/items/Edit',compact('item'));
+			$items = $this->Item_model->get($id); 
+			$this->load->view('Dashboard/items/Edit',compact('items'));
 		}
 	}
 	public function Edit(int $id)

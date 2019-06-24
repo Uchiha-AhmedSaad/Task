@@ -5,18 +5,14 @@ class Admin_Controller extends MY_Controller
 
 	/*
 		*to make this controller registered in spl_autoload_register function 
-		i should go to config and $config['subclass_prefix'] = 'MY_';;
-
+		i should go to config and $config['subclass_prefix'] = 'MY_';
 	*/
 	protected $model_name = "";
 	function __construct()
 	{
-
 		//this parent refer to CI_Controller.
 		parent::__construct();
-
 		$this->load->model($this->model_name);
-
 		if (!$this->session->userdata('_token')) 
 		{
 			redirect('login');

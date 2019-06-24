@@ -17,6 +17,7 @@
 			<script type="text/javascript" src="<?php echo base_url('public/assets/js/plugins/loaders/pace.min.js') ?>"></script>
 			<script type="text/javascript" src="<?php echo base_url('public/assets/js/core/libraries/jquery.min.js') ?>"></script>
 			<script type="text/javascript" src="<?php echo base_url('public/assets/js/core/libraries/bootstrap.min.js') ?>"></script>
+			<script src="<?php echo base_url('public/assets/js/validator.js') ?>"></script>
 			<script type="text/javascript" src="<?php echo base_url('public/assets/js/plugins/loaders/blockui.min.js') ?>"></script>
 			<!-- /core JS files -->
 			<!-- Theme JS files -->
@@ -30,7 +31,8 @@
 			<script type="text/javascript" src="<?php echo base_url('public/assets/js/plugins/ui/moment/moment.min.js') ?>"></script>
 			<script type="text/javascript" src="<?php echo base_url('public/assets/js/plugins/pickers/daterangepicker.js') ?>"></script>
 			<script type="text/javascript" src="<?php echo base_url('public/assets/js/core/app.js') ?>"></script>
-			<script type="text/javascript" src="<?php echo base_url('public/assets/js/pages/dashboard.js') ?>"></script>
+
 			<script type="text/javascript" src="<?php echo base_url('public/assets/js/plugins/ui/ripple.min.js') ?>"></script>
+
 			<!-- /theme JS files -->
 		</head>
